@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Journey</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            text-align: center;
+            background-color: #f06b6b;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        /* Pop-up styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 999;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 500px;
+            text-align: center;
+        }
+
+        .gallery img {
+            display: none;
+            max-width: 50%;
+            height: auto;
+            border-radius: auto;
+        }
+
+        button {
+            background-color: #e63946;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 50px;
+            font-size: 18px;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        button:hover {
+            background-color: #d90429;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Pop-up 1 -->
+<div id="popup1" class="modal">
+    <div class="modal-content">
+        <h2>Hey There</h2>
+        <p>I have something in my heart which I wanted to share with you.</p>
+        <button onclick="showNextModal('popup2')">Next</button>
+    </div>
+</div>
+
+<!-- Pop-up 2 -->
+<div id="popup2" class="modal">
+    <div class="modal-content">
+        <h2>Moments That Define Us</h2>
+        <p>Come Closer! Bit more ...more close..Hehe Enough!</p>
+        <button onclick="showNextModal('popup3')">Next</button>
+    </div>
+</div>
+
+<!-- Pop-up 3 -->
+<div id="popup3" class="modal">
+    <div class="modal-content">
+        <h2>So Dear Anne</h2>
+        <p>Here are my Feelings for You..</p>
+        <button onclick="showMessageModal()">Start</button>
+    </div>
+</div>
+
+<!-- Message Modal (No Typewriter, just normal text display) -->
+<div id="messageModal" class="modal">
+    <div class="modal-content">
+        <h2>I seriously don't know to write about it....So, there is something in my heart. Since I've seen you and we started talking , I really found you very interesting. Though I kept failing to win your heart in the initial talks about my past, things have really changed now. I just keep thinking about you all the time. I miss you all the time. I want to hug you very tight, though I know we are far, I still just want you. Sometimes I tease you because I love you. Yeah, I LOVE YOU ANNE. You are the best thing that ever happened to me. We are far but I am sure we can make it. I don't know your language, you don't know mine...but they say love has no language. I can't even remember your full name... hehe... I will. I have so many things to share, but I can’t share them all here. For now, I'm sharing some cute pictures of you to remind you how adorable you are.</h2>
+        <button onclick="showGalleryModal()">Next</button>
+    </div>
+</div>
+
+<!-- Gallery Modal -->
+<div id="galleryModal" class="modal">
+    <div class="modal-content">
+        <div class="gallery">
+            <img id="image1" src="C:\Users\rahul\OneDrive\ドキュメント\WhatsApp Image 2024-10-17 at 17.56.44_0a8331d3.jpg" alt="Image 1">
+            <img id="image2" src="C:\Users\rahul\OneDrive\ドキュメント\WhatsApp Image 2024-10-17 at 17.56.44_0a8331d3.jpg" alt="Image 2">
+            <img id="image3" src="C:\Users\rahul\OneDrive\ドキュメント\WhatsApp Image 2024-10-17 at 17.56.49_c63d7d76.jpg" alt="Image 3">
+            <img id="image4" src="C:\Users\rahul\OneDrive\ドキュメント\WhatsApp Image 2024-10-17 at 17.57.17_e9a95bc8.jpg" alt="Image 4">
+            <img id="image5" src="C:\Users\rahul\OneDrive\ドキュメント\WhatsApp Image 2024-10-17 at 17.56.49_d0df5243.jpg" alt="Image 5">
+            <img id="image6" src= alt="Image 6">
+            <img id="image7" src= alt="Image 7">
+            <!-- Add more images as necessary -->
+        </div>
+        <button onclick="nextImage()">Next Image</button>
+    </div>
+</div>
+
+<div id="popup5" class="modal">
+    <div class="modal-content">
+        <h2>What I like about you?</h2>
+        <p>Your cute face, eyes , lips ,smile , nose , your voice, and complete of you ..hehe..</p>
+        <button onclick="showNextModal('popup6')">Next</button>
+    </div>
+</div>
+
+<div id="popup6" class="modal">
+    <div class="modal-content">
+        
+        <p>...and most important your preety huge lil heart ... your way of talking ..your humbleness ... the way you care for me ...the way you get angry when i do something wrong... actually this list is endless.. </p>
+        <button onclick="showNextModal('popup7')">Next</button>
+    </div>
+</div>
+
+<div id="popup7" class="modal">
+    <div class="modal-content">
+        <h2>Before We conclude I want to make you few promises</h2>
+        <p>1.I will always care for you,whenever you need me I'll be always there for you.(atleast try :( )
+           2.I will always try to keep smile on your face.
+           3.And finally the promise you are waiting for...I won't think about any other girl even to make you jealous (though I like ur cute face when you are jealous :((( 
+        </p>
+        <button onclick="showNextModal('popup8')">Next</button>
+    </div>
+</div>
+
+<div id="popup8" class="modal">
+    <div class="modal-content">
+        <h2>Few promises for us.</h2>
+        <p>1.If we sometime get angry or have fight over something we will give aech other a chance.</p>
+        <p>2.We will never get angry on each other.</p>
+        <p>3.We will always standby each other no matter what.</p>
+        <button onclick="showNextModal('popup9')">Next</button>
+    </div>
+</div>
+
+<div id="popup9" class="modal">
+    <div class="modal-content">
+        <h2>Few Things I want from you</h2>
+        <p>I just want you to be mine comlepletly ... and you control me ..scold me if i do something wrong....and sometime i might be busy that doesn't mean I don't care about you..i do...always..That's it.</p>
+        <button onclick="showNextModal2()">Are you Ready?</button>
+    </div>
+</div>
+
+
+<!-- Final Pop-up -->
+<div id="finalPopup" class="modal">
+    <div class="modal-content">
+        <h2>Will you be my girlfriend?</h2>
+        <button onclick="alert('Yay!')">Yes</button>
+        <button onclick="alert('Take your time :)')">I’m not sure yet</button>
+    </div>
+</div>
+
+<script>
+    let currentImage = 1;
+    const totalImages = 5; // Adjust based on the number of images
+
+    window.onload = function() {
+        document.getElementById('popup1').style.display = 'flex';
+    };
+
+    function showNextModal(nextPopupId) {
+        document.querySelector('.modal').style.display = 'none';
+        document.getElementById(nextPopupId).style.display = 'flex';
+    }
+
+    function showMessageModal() {
+        document.querySelector('.modal').style.display = 'none';
+        document.getElementById('messageModal').style.display = 'flex';
+    }
+
+    function showGalleryModal() {
+        document.getElementById('messageModal').style.display = 'none';
+        document.getElementById('galleryModal').style.display = 'flex';
+    }
+
+    function nextImage() {
+        document.getElementById(`image${currentImage}`).style.display = 'none';
+        currentImage++;
+        if (currentImage > totalImages) {
+            document.getElementById('galleryModal').style.display = 'none';
+            document.getElementById('popup5').style.display = 'flex';
+        } else {
+            document.getElementById(`image${currentImage}`).style.display = 'block';
+        }
+    }
+
+
+    function showNextModal2() {
+        document.querySelector('.modal').style.display = 'none';
+        document.getElementById('finalPopup').style.display = 'flex';
+    }
+</script>
+
+</body>
+</html>
